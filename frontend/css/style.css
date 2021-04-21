@@ -1,0 +1,106 @@
+body {
+  background: #fce300;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #fce300, #1F1C18);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #fce300, #1F1C18);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial;
+}
+
+/* Style tab links */
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 100px 20px;
+  height: 100%;
+}
+
+#Home {background-color: rgb(50, 196, 135);
+  background: -webkit-linear-gradient(to right, rgb(50, 196, 135), #d9ff04);
+  background: linear-gradient(to right, rgb(50, 196, 135), #d9ff04);
+}
+#Categories {background-color: rgb(48, 138, 180);
+  background: -webkit-linear-gradient(to right, rgb(48, 138, 180), #1F1C18);
+  background: linear-gradient(to right, rgb(48, 138, 180), #1F1C18);
+}
+#Articles {background-color: rgb(138, 51, 196);
+  background: -webkit-linear-gradient(to right, rgb(138, 51, 196), #1F1C18);
+  background: linear-gradient(to right, rgb(138, 51, 196), #1F1C18);
+}
+#Authors {background-color: rgba(211, 136, 23, 0.925);
+  background: -webkit-linear-gradient(to right, rgba(211, 136, 23, 0.925), #1F1C18);
+  background: linear-gradient(to right, rgba(211, 136, 23, 0.925), #1F1C18);
+}
+* {box-sizing: border-box}
+
+/* Style the tab */
+.tab {
+  float: left;
+  border: 1px solid #ccc;
+  background-color: #8b8b8b;
+  width: 30%;
+  height: 300px;
+  
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  display: block;
+  background-color: inherit;
+  color: black;
+  padding: 40px 14px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 18px;
+  font-weight: bold;
+  color:white;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent1 {
+  float: left;
+  padding: 0px 12px;
+  border: 1px solid #ccc;
+  width: 100%;
+  border-left: none;
+  height: 1000px;
+
+}
+h3 {text-align: center;}
+p {text-align: center;}

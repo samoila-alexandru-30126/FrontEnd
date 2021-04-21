@@ -1,0 +1,113 @@
+<html>
+<head>
+
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+  <button class="tablink" onclick="openPage('Home', this, 'red')">Home</button>
+<button class="tablink" onclick="openPage('Categories', this, 'green')" id="defaultOpen">Categories</button>
+<button class="tablink" onclick="openPage('Articles', this, 'blue')">Articles</button>
+<button class="tablink" onclick="openPage('Authors', this, 'orange')">Authors</button>
+
+<div id="Home" class="tabcontent1">
+  <h3>Home</h3>
+  <p>Aici putem face login?</p>
+</div>
+
+<div id="Categories" class="tabcontent1">
+  <h3>Categories</h3>
+  <div class="tab">
+    <button class="tablinks" onclick="openCity(event, 'Show_Category')">Show</button>
+    <button class="tablinks" onclick="openCity(event, 'Remove_Category')">Remove</button>
+    <button class="tablinks" onclick="openCity(event, 'Update_Category')">Update</button>
+    <button class="tablinks" onclick="openCity(event, 'Add_Category')">Add</button>
+  </div>
+  
+  <div id="Show_Category" class="tabcontent">
+    <h3>Afisare</h3>
+    <button onclick="ShowCategories()">Delete</button>
+  </div>
+  
+  <div id="Remove_Category" class="tabcontent">
+    <h3>Stergere</h3>
+    <input id="Id1">
+    <button onclick="deletebyId()">Delete</button>
+  </div>
+  
+  <div id="Update_Category" class="tabcontent">
+    <h3>modify</h3>
+    <p>Aici modificam categorii</p>
+  </div>
+  <div id="Add_Category" class="tabcontent">
+    <h3>Add</h3>
+    <p>Aici adaugam categorii</p>
+  </div>
+</div>
+
+
+<div id="Articles" class="tabcontent1">
+  <h3>Articles</h3>
+  <div class="tab">
+    <button class="tablinks" onclick="openCity(event, 'Show_Articles')">Show</button>
+    <button class="tablinks" onclick="openCity(event, 'Remove_Articles')">Remove</button>
+    <button class="tablinks" onclick="openCity(event, 'Update_Articles')">Update</button>
+    <button class="tablinks" onclick="openCity(event, 'Add_Articles')">Add</button>
+  </div>
+  
+  <div id="Show_Articles" class="tabcontent">
+    <h3>Afisare</h3>
+    <p>Aici afisam articole</p>
+  </div>
+  
+  <div id="Remove_Articles" class="tabcontent">
+    <h3>Stergere</h3>
+    <p>Aici stergem articole</p>
+  </div>
+  
+  <div id="Update_Articles" class="tabcontent">
+    <h3>modify</h3>
+    <p>Aici modificam articole</p>
+  </div>
+  <div id="Add_Articles" class="tabcontent">
+    <h3>Add</h3>
+    <p>Aici adaugam articole</p>
+  </div>
+</div>
+<div id="Authors" class="tabcontent1">
+  <h3>Authors</h3>
+  <div class="tab">
+    <button class="tablinks" onclick="openCity(event, 'Show_Author')">Show</button>
+    <button class="tablinks" onclick="openCity(event, 'Remove_Author')">Remove</button>
+    <button class="tablinks" onclick="openCity(event, 'Update_Author')">Update</button>
+    <button class="tablinks" onclick="openCity(event, 'Add_Author')">Add</button>
+  </div>
+  
+  <div id="Show_Author" class="tabcontent">
+    <h3>Afisare</h3>
+    <p>Aici afisam categorii</p>
+  </div>
+  
+  <div id="Remove_Author" class="tabcontent">
+    <h3>Stergere</h3>
+    <p>Aici stergem categorii</p>
+  </div>
+  
+  <div id="Update_Author" class="tabcontent">
+    <h3>modify</h3>
+    <p>Aici modificam categorii</p>
+  </div>
+  <div id="Add_Author" class="tabcontent">
+    <h3>Add</h3>
+    <p>Aici adaugam categorii</p>
+  </div>
+</div>
+<script src="js/app.js"></script>
+<script type="text/javascript" src="libs/axios.js"></script>
+
+</body>
+
+
+
+
+</html>
