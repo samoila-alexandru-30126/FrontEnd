@@ -104,3 +104,55 @@ body, html {
 }
 h3 {text-align: center;}
 p {text-align: center;}
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  height: 150px;
+  background-color: rgba(11, 77, 107, 0.404);
+  border: 1px solid black;
+  float: left;
+  margin: 1px;
+  padding: 10px 3px;
+  /*setting width for each and every card element as well as -10px for removing the margin width for 5 elements*/
+  width: calc( 100% / 5 - 10px);
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+.container {
+  display: block;
+  height: 100px;
+  width: 50%;
+ 
+}
+.Button_Show{
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 18px;
+  font-weight: bold;
+  padding: auto;
+  width: 15%;
+  margin-left: 33%;
+  height: 60px;
+  padding-left: 70px;
+  background-color: #cecece;
+}
+.Button_Add{
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 18px;
+  font-weight: bold;
+  padding: auto;
+  width: 15%;
+  margin-left: 10%;
+  height: 60px;
+  padding-left: 70px;
+  background-color: #cecece;
+}

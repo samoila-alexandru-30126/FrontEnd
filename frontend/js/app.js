@@ -1,31 +1,92 @@
 
-const  axios  = require('axios').default;
 
-var Admin = [
-{
-  username:"admin",
-  password:"admin"
-},
-{
-  username:"Alex",
-  password:"12345"
+
+
+var infoArray;
+var info={
+
+  "id": 0,
+  "Title": "",
+  "Description": "",
+  "Created_at": "",
+  "Modified_at": ""
+
 }
-];
+
 function deletebyId()
 {
-  var Id1=document.getElementById("Id1").value;
+  var serverPath="http://localhost:8080/categories";
+  var Id1="";
+  Id1=document.getElementById("Id1").value;
+  serverPath=serverPath.concat("/",Id1);
   
+  axios.delete(serverPath).then(
+    console.log("Ser")
+    // Observe the data keyword this time. Very important
+    // payload is the request body
+    // Do something;
+  );
 }
+  function AddCategory()
+  {
+    var TitleAdd="",DescriptionAdd="";
+    TitleAdd=document.getElementById("TitleAdd").value;
+    DescriptionAdd=document.getElementById("DescriptionAdd").value;
+
+    var category={
+      Title: TitleAdd,
+      Description:DescriptionAdd
+    }
+
+    axios.post("http://localhost:8080/categories", {
+    Title: "TitleAdd",
+      Description: "DescriptionAdd"
+    })
+    .then((response) => {
+      console.log(response);
+    }, (error) => {
+      console.log(error);
+    });
+
+  }
+
+
+
+
 function ShowCategories()
 {
-
-  axios.get("http://localhost:8080/categories/2").then((response) => {console.log(response.data)
+  axios.get("http://localhost:8080/categories").then((response) => {infoArray=response.data
 })
+
+
+
 .catch(err =>{
   console.error(err);
 }
+
   
   )
+  console.log(infoArray);
+  
+  var h = document.getElementById("Show_Category");
+  document.getElementById("Show_Category").innerHTML = "";
+  var i=0;
+  for(i=0;i<infoArray.length;i++)
+  {
+    info=infoArray[i];
+  h.insertAdjacentHTML('afterbegin', "<div class='card'> <div class='container'> <h4>Title: <b id='Title'></h4> Description: <p id='Description'> </div> </div> ");    
+  document.getElementById("Title").innerHTML=info.Title;
+  document.getElementById("Description").innerHTML=info.Description;
+
+  }
+  h.insertAdjacentHTML('beforeend',"<button class='Button_Show' onclick='ShowCategories()'>Show</button>");
+
+  
+  // <script >
+  //   <h3>Afisare</h3>
+  // </script>
+
+
 }
 function openPage(pageName, elmnt, color) {
   // Hide all elements with class="tabcontent" by default */
