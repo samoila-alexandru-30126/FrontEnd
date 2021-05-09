@@ -13,15 +13,14 @@ var info={
 
 }
 
-function deletebyId()
+function deleteById(Id_Category)
 {
   var serverPath="http://localhost:8080/categories";
-  var Id1="";
-  Id1=document.getElementById("Id1").value;
-  serverPath=serverPath.concat("/",Id1);
+
+  serverPath=serverPath.concat("/",Id_Category);
   
   axios.delete(serverPath).then(
-    console.log("Ser")
+    console.log(Id_Category)
     // Observe the data keyword this time. Very important
     // payload is the request body
     // Do something;
@@ -38,10 +37,7 @@ function deletebyId()
       Description:DescriptionAdd
     }
 
-    axios.post("http://localhost:8080/categories", {
-    Title: "TitleAdd",
-      Description: "DescriptionAdd"
-    })
+    axios.post("http://localhost:8080/categories", category)
     .then((response) => {
       console.log(response);
     }, (error) => {
@@ -68,26 +64,33 @@ function ShowCategories()
   )
   console.log(infoArray);
   
-  var h = document.getElementById("Show_Category");
-  document.getElementById("Show_Category").innerHTML = "";
+  var h = document.getElementById("Categories");
+  document.getElementById("Categories").innerHTML = "";
   var i=0;
   for(i=0;i<infoArray.length;i++)
   {
     info=infoArray[i];
-  h.insertAdjacentHTML('afterbegin', "<div class='card'> <div class='container'> <h4>Title: <b id='Title'></h4> Description: <p id='Description'> </div> </div> ");    
+  h.insertAdjacentHTML('afterbegin', "<div class='card'> <div class='container'> <h4>Title: <b id='Title'></h4> Description: <p id='Description'><h4>Created at: <b id='Created'></h4> Modified at: <p id='Modified'> </div> <p><button id='Idbuton' class='button_Del' >Delete</p> <p><button class='button_Up'>Update</p> </div>");    
+    document.getElementById("Idbuton").onclick=deleteById(info.id);
+    document.getElementById("Idbuton").removeAttribute("id");
   document.getElementById("Title").innerHTML=info.Title;
   document.getElementById("Description").innerHTML=info.Description;
+  document.getElementById("Created").innerHTML=info.Created_at;
+  document.getElementById("Modified").innerHTML=info.Modified_at;
+
 
   }
-  h.insertAdjacentHTML('beforeend',"<button class='Button_Show' onclick='ShowCategories()'>Show</button>");
-
-  
-  // <script >
-  //   <h3>Afisare</h3>
-  // </script>
+  h.insertAdjacentHTML('beforeend',"<button class='Button_Show' onclick='ShowCategories()'>Add</button>");
+  console.log(infoArray);
 
 
 }
+
+function Update_Category()
+{
+
+}
+
 function openPage(pageName, elmnt, color) {
   // Hide all elements with class="tabcontent" by default */
   var i, tabcontent, tablinks;
